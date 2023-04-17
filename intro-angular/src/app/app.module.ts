@@ -6,10 +6,17 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductListComponent } from './products/product-list.component';
+import { FormsModule } from '@angular/forms';
+import { ConvertDashesCustomPipe } from './shared/convert-dash.pipe';
 
 @NgModule({
-  declarations: [AppComponent, ProductListComponent, HomeComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule],
+  declarations: [
+    AppComponent,
+    ProductListComponent,
+    HomeComponent,
+    ConvertDashesCustomPipe,
+  ],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
