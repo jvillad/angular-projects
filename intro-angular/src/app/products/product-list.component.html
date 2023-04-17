@@ -1,40 +1,51 @@
-<div class="card">
-    <div class="card-header">
-        Coffee Beans List
+<section class="container py-5">
+    <h2 class="p-1">Ultimate Coffee Management</h2>
+    <div class="card">
+        <h4 class="card-header">
+            {{pageTitle}}
+        </h4>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4 d-flex gap-2 align-items-center">
+                    <label for="filterInput">Filter By:</label>
+                    <input id="filterInput" class="p-1" type="text" [(ngModel)]="listFilter" />
+                </div>
+            </div>
+            <div class="row d-flex gap-4">
+                <div class="col-md-6">
+                    <h4 class="py-4">Filtered by: <span class="text-info">{{listFilter | lowercase }}</span></h4>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table" *ngIf="products.length">
+                    <thead>
+                        <tr>
+                            <th class="p-0 pb-2">
+                                <button class="btn btn-primary" (click)="toggleImage()">{{ showImage ? 'Hide' :
+                                    'Display'}} Image</button>
+                            </th>
+                            <th>Product</th>
+                            <th>Code</th>
+                            <th>Brewdate</th>
+                            <th>Price</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of filteredProducts">
+                            <td>
+                                <img *ngIf="showImage" class='product-img' [src]="product.productImageUrl"
+                                    [title]="product.productName">
+                            </td>
+                            <td>{{product.productName}}</td>
+                            <td>{{ product.productCode | lowercase | convertToSpaces: '-' }}</td>
+                            <td>{{ product.productBrewDate }}</td>
+                            <td>{{product.productPrice | currency | lowercase}}</td>
+                            <td>{{product.productRating}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-    <div class="card-body">
-        <div class="row">
-            <div class="col-md-2">
-                Filter by:
-            </div>
-            <div class="cold-md-4">
-                <input type="text" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <h4>Filtered by:</h4>
-            </div>
-        </div>
-        <div class="table-responsive">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>
-                            <button class="btn btn-primary">Display Image</button>
-                        </th>
-                        <th>Product</th>
-                        <th>Code</th>
-                        <th>Available</th>
-                        <th>Price</th>
-                        <th>Rating</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
-        </div>
-
-    </div>
-</div>
+</section>

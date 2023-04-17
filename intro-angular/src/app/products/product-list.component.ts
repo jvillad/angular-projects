@@ -9,7 +9,20 @@ import { IProduct } from '../common/models/product.interface';
 export class ProductListComponent implements OnInit {
   pageTitle: string = 'Coffee List';
   showImage: boolean = false;
-  listFilter: string = 'coffee';
+
+  // private backing variable
+  private _listFilter: string = '';
+  // getter
+  get listFilter(): string {
+    return this._listFilter;
+  }
+  // setter
+  set listFilter(value: string) {
+    this._listFilter = value;
+    this.filteredProducts = this.performFilter(value);
+  }
+
+  filteredProducts: IProduct[] = [];
 
   // Sample hardcoded data below
   products: IProduct[] = [
@@ -37,11 +50,21 @@ export class ProductListComponent implements OnInit {
     },
   ];
 
+  // filter the list of products
+  performFilter(filterBy: string): IProduct[] {
+    filterBy = filterBy.toLocaleLowerCase();
+
+    // determine if the input is in products
+    return this.products.filter((product: IProduct) =>
+      product.productName.toLocaleLowerCase().includes(filterBy)
+    );
+  }
+
   toggleImage(): void {
     this.showImage = !this.showImage;
   }
 
   ngOnInit(): void {
-    console.log('In OnInit');
+    this.listFilter = 'blend';
   }
 }
