@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductListComponent } from './products/product-list.component';
 import { FormsModule } from '@angular/forms';
 import { ConvertDashesCustomPipe } from './shared/convert-dash.pipe';
+import { StarComponent } from './shared/rating/star.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ConvertDashesCustomPipe } from './shared/convert-dash.pipe';
     ProductListComponent,
     HomeComponent,
     ConvertDashesCustomPipe,
+    StarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
