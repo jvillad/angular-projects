@@ -1,9 +1,23 @@
-<div class="crop" [style.width.px]="cropWidth" [title]="rating">
+<!-- star rating -->
+<div class="crop" [style.width.px]="cropWidth" [title]="rating" (click)="onClick()">
     <div class="stars">
         <i class="bi bi-star-fill"></i>
         <i class="bi bi-star-fill"></i>
         <i class="bi bi-star-fill"></i>
         <i class="bi bi-star-fill"></i>
         <i class="bi bi-star-fill"></i>
+    </div>
+</div>
+
+<!-- rating info popup -->
+<div *ngIf="popup === true">
+    <div class="overlay">
+        <div class="popup">
+            <a class="close" (click)="popup = false">&times;</a>
+            <div class="content">
+                <p>Item has <span class="fw-bold">{{rating}}</span> rating.</p>
+                <p class="pt-2">{{description}}</p>
+            </div>
+        </div>
     </div>
 </div>
