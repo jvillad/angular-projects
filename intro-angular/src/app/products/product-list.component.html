@@ -38,14 +38,16 @@
                                     [title]="product.productName">
                             </td>
                             <td>{{product.productName}}</td>
-                            <td>{{ product.productCode | lowercase | convertToSpaces: '-' }}</td>
-                            <td>{{ product.productBrewDate }}</td>
+                            <td>{{product.productCode | lowercase | convertToSpaces: '-' }}</td>
+                            <td>{{product.productBrewDate }}</td>
                             <td>{{product.productPrice | currency | lowercase}}</td>
-                            <td><pm-star [rating]="product.productRating"></pm-star></td>
+                            <td><pm-star [rating]="product.productRating"
+                                    [description]="product.productDescription"></pm-star></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+
 </section>
