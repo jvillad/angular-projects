@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -18,7 +18,13 @@ import { StarComponent } from './shared/rating/star.component';
     ConvertDashesCustomPipe,
     StarComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    FormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
