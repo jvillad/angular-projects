@@ -1,12 +1,13 @@
 .crop {
   overflow: hidden;
 }
-div {
-  cursor: pointer;
-}
 
 .stars {
   width: 90px;
+}
+
+.info:hover {
+  cursor: pointer;
 }
 
 /* start of info popup */
@@ -39,7 +40,7 @@ div {
 }
 .popup .close {
   position: absolute;
-  top: 5px;
+  top: 10px;
   right: 10px;
   transition: all 200ms;
   font-size: 30px;
