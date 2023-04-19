@@ -9,6 +9,7 @@ import { ProductListComponent } from './products/product-list.component';
 import { FormsModule } from '@angular/forms';
 import { ConvertDashesCustomPipe } from './shared/convert-dash.pipe';
 import { StarComponent } from './shared/rating/star.component';
+import { ProductDetailComponent } from './products/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { StarComponent } from './shared/rating/star.component';
     HomeComponent,
     ConvertDashesCustomPipe,
     StarComponent,
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,
