@@ -1,1 +1,6 @@
-<p>running-list works!</p>
+<label for="location-search">Search run groups</label>
+<input id="group-search" #search placeholder="Sydney" />
+<button (click)="searchRunGroups(search.value)">Search</button>
+<article *ngFor="let location of results">
+    <p (click)="selectRunTribe(location)">{{location.name}}</p>
+</article>
