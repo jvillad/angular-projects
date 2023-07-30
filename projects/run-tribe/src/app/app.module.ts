@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { RunningListComponent } from './running-list/running-list.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RunningListComponent
+    RunningListComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule
