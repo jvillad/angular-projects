@@ -1,5 +1,5 @@
 <label for="location-search">Search run groups</label>
-<input id="group-search" #search placeholder="Sydney" />
+<input id="group-search" #search placeholder="Sydney" (keydown.enter)="searchRunGroups(search.value)" />
 <button (click)="searchRunGroups(search.value)">Search</button>
 <article *ngFor="let location of results">
     <p (click)="selectRunTribe(location)">{{location.name}}</p>
