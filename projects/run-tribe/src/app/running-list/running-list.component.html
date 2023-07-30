@@ -3,4 +3,6 @@
 <button (click)="searchRunGroups(search.value)">Search</button>
 <article *ngFor="let location of results">
     <p (click)="selectRunTribe(location)">{{location.name}}</p>
+    <img src={{location.imageUrl}} alt={{location.description}}>
+    <p>{{location.description}}</p>
 </article>
